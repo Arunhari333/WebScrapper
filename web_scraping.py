@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from csv import writer
 
 keyword = 'React'
-response = requests.get('https://www.meetup.com/find/events/?allMeetups=false&keywords=React&radius=25&userFreeform=New+York%2C+New+York%2C+USA&mcId=c10001&mcName=New+York%2C+NY')
+response = requests.get('https://www.meetup.com/find/events/?allMeetups=false&keywords={}&radius=25&userFreeform=New+York%2C+New+York%2C+USA&mcId=c10001&mcName=New+York%2C+NY'.format(keyword))
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
